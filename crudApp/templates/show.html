@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>show test</h1>
+
+<h4><a href = "{% url 'create' %}"> 글작성하러가기! </a></h4>
+{%for blog in blogs.all%}
+    <div class="container">
+        <a href="{% url 'detail' blog.id %}">
+            <h1>제목: {{blog.title}}</h1>
+        </a>
+        <p>내용 :  {{blog.body}}</p>
+        <small class="text-muted">{{blog.pub_date}}</small>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>create test</h1>
+
+<div class = 'container'>
+    <form method = 'POST'>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input class="btn bin-dark" type="submit" value="글작성하기">
+    </form>
+</div>
+
+{% endblock %}
