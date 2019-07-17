@@ -184,3 +184,17 @@ def delete(request, pk):
         blog.delete()
         return redirect('show')
 ```
+---
+
+
+> ###### *Collectstatic*
+`
+Django project, app의 static 파일들(정적파일들)을 settings.py STATIC_ROOT 라는
+`
+`
+하나의 경로로 모아주는 작업
+`
+```
+python manage.py collectstatic
+```
+---
