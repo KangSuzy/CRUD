@@ -24,7 +24,7 @@ python manage.py collectstatic
 ```
 ---
 ## CRUD
-#### ==Create==
+### Create
 - urls.py path 설정
 ```
 from django.contrib import admin
@@ -104,7 +104,7 @@ def create(request):
     else:
         form = BlogForm() # forms.py 의 BlogForm 클래스의 인스턴스
 ```
-#### ==Read==
+### Read
 - views.py
 ###### *show() / detail() 함수 작성*
 ```
@@ -117,7 +117,7 @@ def show(request):
     blogs = Blog.objects.order_by('-id')    #id 반대로 / 글을 최신순으로
     return render(request, 'show.html', {'blogs':blogs})
 ```
-#### ==Update==
+### Update
 - urls.py path 추가
 ```
 urlpatterns = [  ...,
@@ -165,7 +165,7 @@ def edit(request, pk):
 
 {% endblock %}
 ```
-#### ==Delete==
+### Delete
 ###### *detail.html과 연결*
 ```
 <a href="{% url 'delete' pk=blog.pk %}"> 삭제 </a>
