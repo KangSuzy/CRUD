@@ -49,7 +49,7 @@ def summary(self):
     return self.body[:50]
 
 ```
-###### *models.py 등록 후 ==migration== 필수 !!*
+###### *models.py 등록 후 migration 필수 !!*
 ```
 python manage.py makemigrations
 python manage.py migrate
