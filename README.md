@@ -16,12 +16,6 @@ pip install django (설치)
 django-admin startproject project명
 python manage.py startapp app명
 ```
-
-> ###### *Collectstatic*
-- Django project와 app의 static 파일들을 settings.py STATIC_ROOT 로 옮김
-```
-python manage.py collectstatic
-```
 ---
 ## CRUD
 ### Create
@@ -189,10 +183,7 @@ def delete(request, pk):
 
 > ###### *Collectstatic*
 `
-Django project, app의 static 파일들(정적파일들)을 settings.py STATIC_ROOT 라는
-`
-`
-하나의 경로로 모아주는 작업
+Django project, app의 static 파일들(정적파일들)을 settings.py STATIC_ROOT 라는 하나의 경로로 모아주는 작업
 `
 ```
 python manage.py collectstatic
