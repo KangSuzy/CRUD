@@ -55,7 +55,7 @@ ROOT_URLCONF = 'crud.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['crudApp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +120,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS=(
+STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'crudApp', 'static'),
-)
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
