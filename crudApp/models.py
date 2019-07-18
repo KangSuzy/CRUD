@@ -7,7 +7,7 @@ class Blog(models.Model):
     body = models.TextField()
     update_Date = models.DateTimeField(auto_now=True)
 
-def __str(self):
+def __str__(self):
     return self.title
 
 def summary(self):
