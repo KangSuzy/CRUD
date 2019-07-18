@@ -188,4 +188,11 @@ Django project, app의 static 파일들(정적파일들)을 settings.py STATIC_R
 ```
 python manage.py collectstatic
 ```
+> ###### *input type = hidden ?*
+`
+화면상 보이진 않지만 서버쪽으로 어떤 데이터를 전송할때 사용하는 속성
+`
+```
+<input type = "hidden" name = "..."  value = "서버 전송 값">
+```
 ---
