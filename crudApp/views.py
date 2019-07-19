@@ -5,6 +5,9 @@ from django.utils import timezone
 
 # Create your views here.
 
+def index(request):
+        return render(request, 'index.html');
+
 def create(request):
     if request.method == "POST":
         form = BlogForm(request.POST) # BlogForm 받은 데이터를 처리하기 위한 인스턴스 생성

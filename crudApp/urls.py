@@ -1,7 +1,9 @@
 from crudApp import views
 from django.urls import path
 
-urlpatterns = [  
+urlpatterns = [
+    
+    path('', views.index, name="index"), # Home 페이지  
     path('create/', views.create, name="create"), # 글 작성
     path('<int:blog_id>/', views.detail, name="detail"), # 상세보기
     path('show/', views.show, name="show"), # 목록보기
