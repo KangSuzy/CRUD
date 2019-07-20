@@ -12,10 +12,17 @@
     }
   </style>
 </head>
-
+<!--
+<h1>show test</h1>
 
 <h4><a href = "{% url 'create' %}"> 글작성하러가기! </a></h4>
-{%for blog in blogs.all%}
+
+<a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+  <form id="logout" method="POST" action="{% url 'logout'%}">
+      {% csrf_token %} <input type="hidden" />
+  </form>
+
+{% for blog in blogs.all %}
     <div class="container">
         <a href="{% url 'detail' blog.id %}">
             <h1>제목 : {{blog.title}}</h1>
@@ -24,3 +31,46 @@
         <small class="text-muted">{{blog.pub_date}}</small>
     </div>
 {% endfor %}
+
+<li class="nav-item">
+      <a class="nav-item nav-link" href="{% url 'signup' %}">Signup</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+  </li>
+
+
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">환영합니다. {{ user.username }} 님!</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'create' %}">글쓰기</a>
+                            <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                            <form id="logout" method="POST" action="{% url 'logout' %}">
+                                {% csrf_token %} <input type="hidden" />
+                            </form>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="{% url 'signup' %}">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
