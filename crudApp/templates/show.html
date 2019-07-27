@@ -74,3 +74,14 @@
             </div>
         </div>
     </nav>
+
+    
+{% for blog in blogs.all %}
+    <div class="container">
+        <a href="{% url 'detail' blog.id %}">
+            <h1>제목 : {{blog.title}}</h1>
+        </a>
+        <p>내용 :  {{blog.body}}</p>
+        <small class="text-muted">{{blog.pub_date}}</small>
+    </div>
+{% endfor %}

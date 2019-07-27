@@ -9,4 +9,5 @@ urlpatterns = [
     path('show/', views.show, name="show"), # 목록보기
     path('<int:pk>/edit/', views.edit, name='edit'), # 수정
     path('<int:pk>/delete/', views.delete, name='delete') # 삭제
+    
 ]
