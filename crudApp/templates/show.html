@@ -81,7 +81,7 @@
         <a href="{% url 'detail' blog.id %}">
             <h1>제목 : {{blog.title}}</h1>
         </a>
-        <p>내용 :  {{blog.body}}</p>
+        <p>내용 :  {{blog.summary}}</p>
         <small class="text-muted">{{blog.pub_date}}</small>
     </div>
 {% endfor %}
