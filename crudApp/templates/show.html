@@ -66,6 +66,12 @@
                         </div>
                     </li>
                     {% else %}
+
+                    <li class="nav-active">
+                        <a class="nav-link" href="{% url 'index' %}">HOME</a>
+                    </li>
+
+
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="{% url 'signup' %}">Signup</a>
                     </li>
@@ -83,10 +89,7 @@
     <div class="container">
         <p>
         </p>
-        <p>
-        </p>
-
-<div class="card" style="width: 18rem;">
+<div class="card">
   <div class="card-body">
     <h5 class="card-title">
         <a href="{% url 'detail' blog.id %}">
@@ -101,6 +104,5 @@
     </p>
   </div>
 </div>
-
-    </div>
+</div>
 {% endfor %}
