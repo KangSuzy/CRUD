@@ -126,7 +126,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'crudApp', 'static'),
 ]
+# static 파일들이 현재 어디에 있는지를 쓰는 곳
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# static 파일들이 어디로 모일 것인지를 쓰는 곳
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
