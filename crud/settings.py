@@ -135,7 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
-
+# 사용자로 부터 받은 파일의 URL
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url

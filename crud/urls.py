@@ -19,10 +19,16 @@ import crudApp.views
 import accounts.views
 import portfolio.views
 
+from django.conf import settings
+from django.conf.urls.static import static
+# media 사용시 필수적으로 추가
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', crudApp.views.index, name="index"),
     path('crudApp/', include('crudApp.urls')),
     path('accounts/', include('accounts.urls')),
     path('portfolio/', portfolio.views.portfolio, name="portfolio"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# media 사용시 필수적으로 추가
